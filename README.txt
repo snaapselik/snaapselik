@@ -1,19 +1,22 @@
-SNAAPSE LIK WEBSITE
-===================
+SNAAPSE LIK WEBSITE — UPDATE 1
 
-Bestanden:
-- index.html
-- style.css
-- script.js
+BELANGRIJK
+Upload de inhoud van deze map direct in de root van je GitHub repo.
 
-Openen:
-Dubbelklik op index.html.
+Nieuw in deze update:
+- hero opgeschoond
+- logo's hersteld (originele logo-bestand gebruikt)
+- rode ticker verwijderd
+- Niet Bankoe foto's vervangen
+- releasecovers kleiner en scherper
+- live-tekst opgeschoond
+- about naar aparte pagina (about.html)
+- no genre rulebook verwijderd
+- press vervangen door compacte EPK-sectie
+- merch verwijderd
+- contact aangepast naar CONTACT / SOCIALS
+- footerlogo hersteld
 
-Aanpassen:
-1. Vervang de # links bij Instagram / TikTok / Spotify door jullie echte URLs.
-2. Pas booking@snaapselik.nl en info@snaapselik.nl aan als deze niet kloppen.
-3. De covers zijn nu volledig in CSS ontworpen. Je kunt ze later vervangen door echte artwork-afbeeldingen.
-4. De site werkt zonder build tools of frameworks.
-
-Online zetten:
-Je kunt deze map direct hosten op Netlify, Vercel, GitHub Pages of vrijwel iedere normale webhost.
+Later zelf makkelijk wijzigen:
+- site-data.js voor links / releases / shows
+- about.html voor persoonlijke teksten van elk lid
