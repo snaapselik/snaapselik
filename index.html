@@ -5,10 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#f22d16">
   <title>Snaapse Lik — Niet Bankoe</title>
-  <meta name="description" content="Snaapse Lik — Nederlandse hiphop met humor, samples en live chaos. Muziek, shows, EPK en de aankomende EP Niet Bankoe.">
+  <meta name="description" content="Snaapse Lik — Nederlandse hiphop met humor, samples en live chaos.">
   <meta property="og:title" content="Snaapse Lik — Niet Bankoe">
   <meta property="og:description" content="Nederlandse hiphop met humor, samples en live chaos.">
-  <meta property="og:type" content="website">
   <meta property="og:image" content="https://snaapselik.nl/assets/og.webp">
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,236 +15,214 @@
   <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
-<body class="home">
-  <div class="grain" aria-hidden="true"></div>
+<body>
+<div class="grain" aria-hidden="true"></div>
 
-  <header class="site-header">
-    <a class="header-logo" href="index.html#top" aria-label="Snaapse Lik home">
-      <img src="assets/logo.png" alt="Snaapse Lik logo">
+<header class="site-header">
+  <a class="header-logo" href="#top" aria-label="Snaapse Lik">
+    <img src="assets/logo.png" alt="Snaapse Lik">
+  </a>
+  <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
+    MENU <span>+</span>
+  </button>
+  <nav id="main-nav" class="main-nav">
+    <a href="#music">MUSIC</a>
+    <a href="#live">LIVE</a>
+    <a href="about.html">ABOUT</a>
+    <a href="#epk">EPK</a>
+    <a href="#contact">CONTACT</a>
+  </nav>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="hero-photo"></div>
+    <div class="hero-shade"></div>
+    <div class="hero-copy">
+      <div class="hero-brand">
+        <img src="assets/logo.png" alt="Snaapse Lik" class="hero-logo">
+        <p>NEDERLANDSE HIPHOP MET HUMOR,<br>SAMPLES EN LIVE CHAOS.</p>
+      </div>
+
+      <a class="hero-sticker" href="#bankoe">
+        <small>NEXT UP</small>
+        <strong>
+          <span>NIET</span>
+          <span>BANKOE</span>
+        </strong>
+        <b>↓</b>
+      </a>
+    </div>
+  </section>
+
+  <section id="bankoe" class="bankoe">
+    <div class="bankoe-image reveal">
+      <img src="assets/bankoe-left.webp" alt="Snaapse Lik">
+    </div>
+    <div class="bankoe-copy reveal">
+      <span class="eyebrow">UPCOMING EP</span>
+      <h1>NIET<br><em>BANKOE</em></h1>
+      <p>De volgende stap van Snaapse Lik. Nieuwe tracks, sterke hooks, samples, humor en dezelfde energie waarmee de liveshow uit de bocht vliegt.</p>
+      <div class="actions">
+        <a class="button dark" href="#music">HEAR THE SINGLES ↘</a>
+        <a class="text-link" href="#contact">BOOK SNAAPSE LIK ↗</a>
+      </div>
+    </div>
+    <div class="bankoe-side reveal">
+      <img src="assets/bankoe-right.webp" alt="Snaapse Lik">
+    </div>
+  </section>
+
+  <section id="music" class="section music">
+    <div class="section-title reveal">
+      <span>01</span><h2>MUSIC</h2>
+    </div>
+
+    <div class="release-grid">
+      <article class="release-card reveal">
+        <img src="assets/cover-zo-mooi.png" alt="Zo Mooi cover">
+        <div><h3>Zo Mooi</h3><small>SINGLE / 05.12.2025</small></div>
+      </article>
+      <article class="release-card reveal">
+        <img src="assets/cover-wiskunde.png" alt="Wiskunde cover">
+        <div><h3>Wiskunde</h3><small>SINGLE / 16.01.2026</small></div>
+      </article>
+      <article class="release-card reveal">
+        <img src="assets/cover-vlinders.jpg" alt="Vlinders cover">
+        <div><h3>Vlinders</h3><small>SINGLE / 19.03.2026</small></div>
+      </article>
+    </div>
+
+    <div class="platforms reveal">
+      <a href="https://open.spotify.com/artist/59t2biWvFDiQhuZ9R1diuo" target="_blank" rel="noopener">SPOTIFY ↗</a>
+      <a href="https://music.apple.com/nl/artist/snaapse-lik/1855761999" target="_blank" rel="noopener">APPLE MUSIC ↗</a>
+      <a href="https://www.youtube.com/channel/UCHqWy0wI8PoblfnDtV_jnxA" target="_blank" rel="noopener">YOUTUBE ↗</a>
+    </div>
+  </section>
+
+  <section class="quote-band">
+    <p>3VOOR12 LOKAAL</p>
+    <blockquote>“EEN BEETJE <span>PLEZIER</span><br>EN EEN BEETJE <em>MIDDELVINGER.</em>”</blockquote>
+    <a href="https://3voor12lokaal.vpro.nl/artikelen/snaapse-lik-is-een-beetje-plezier-en-een-beetje-middelvinger" target="_blank" rel="noopener">READ ARTICLE ↗</a>
+  </section>
+
+  <section id="live" class="section live">
+    <div class="section-title reveal">
+      <span>02</span><h2>LIVE</h2>
+    </div>
+
+    <div class="live-grid reveal">
+      <img src="assets/live-1.webp" alt="Snaapse Lik live">
+      <img src="assets/live-2.webp" alt="Snaapse Lik live">
+      <div class="live-copy">
+        <h3>Op het podium wordt Snaapse Lik groter, harder en losser.</h3>
+        <a class="button yellow" href="https://www.youtube.com/watch?v=bcrGfG4mYOg" target="_blank" rel="noopener">WATCH FULL SHOW ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-teaser">
+    <div class="section-title reveal">
+      <span>03</span><h2>ABOUT</h2>
+    </div>
+    <div class="about-grid reveal">
+      <img src="assets/about.webp" alt="Snaapse Lik groepsfoto">
+      <div>
+        <p>Meer over Snaapse Lik en wie Mogli, Adelin, Forward en WZRD zijn.</p>
+        <a class="button dark" href="about.html">GO TO ABOUT ↗</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="epk" class="section epk">
+    <div class="section-title small reveal">
+      <span>04</span><h2>EPK</h2>
+    </div>
+    <a class="epk-card reveal" href="EPK.pdf" download="Snaapse-Lik-EPK.pdf">
+      <span>PRESS KIT</span>
+      <strong>DOWNLOAD EPK</strong>
+      <b>↓</b>
     </a>
+  </section>
 
-    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">
-      <span>MENU</span><span class="plus">+</span>
-    </button>
+  <section id="contact" class="contact">
+    <div class="contact-head">
+      <p>CONTACT / SOCIALS</p>
+      <h2>SNAAPSE<br><span>LIK</span></h2>
+    </div>
 
-    <nav id="main-nav" class="main-nav" aria-label="Hoofdnavigatie">
-      <a href="#music">MUSIC</a>
-      <a href="#live">LIVE</a>
-      <a href="about.html">ABOUT</a>
-      <a href="#epk">EPK</a>
-      <a href="#contact">CONTACT</a>
-    </nav>
-  </header>
+    <div class="contact-grid">
+      <div class="contact-info reveal">
+        <a class="email" href="mailto:snaapselik@gmail.com">SNAAPSELIK@GMAIL.COM ↗</a>
+        <a href="tel:+31634038162">+31 6 34038162</a>
 
-  <main id="top">
-    <section class="hero">
-      <div class="hero-photo"></div>
-      <div class="hero-shade"></div>
-
-      <div class="hero-copy">
-        <div class="hero-logo-wrap">
-          <img class="hero-logo" src="assets/logo.png" alt="Snaapse Lik">
-          <p>NEDERLANDSE HIPHOP MET HUMOR,<br>SAMPLES EN LIVE CHAOS.</p>
+        <div class="socials">
+          <a href="https://www.instagram.com/snaapselik/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
+          <a href="https://www.tiktok.com/@snaapse.lik" target="_blank" rel="noopener">TIKTOK ↗</a>
+          <a href="https://open.spotify.com/artist/59t2biWvFDiQhuZ9R1diuo" target="_blank" rel="noopener">SPOTIFY ↗</a>
+          <a href="https://music.apple.com/nl/artist/snaapse-lik/1855761999" target="_blank" rel="noopener">APPLE MUSIC ↗</a>
         </div>
-
-        <a href="#bankoe" class="hero-sticker" aria-label="Ga naar Niet Bankoe">
-          <small>NEXT UP</small>
-          <strong>NIET<br>BANKOE</strong>
-          <span>↓</span>
-        </a>
-      </div>
-    </section>
-
-    <section id="bankoe" class="bankoe">
-      <div class="bankoe-photo reveal">
-        <img src="assets/bankoe-left.webp" alt="Snaapse Lik groepsfoto">
       </div>
 
-      <div class="bankoe-text reveal">
-        <div class="eyebrow">UPCOMING EP</div>
-        <h1>NIET<br><span>BANKOE</span></h1>
-        <p>
-          De volgende stap van Snaapse Lik. Nieuwe tracks, sterke hooks, samples,
-          humor en dezelfde energie waarmee de liveshow uit de bocht vliegt.
+      <form id="booking-form"
+            class="booking-form reveal"
+            name="booking"
+            method="POST"
+            data-netlify="true"
+            data-netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="booking">
+        <input type="hidden" name="subject" data-remove-prefix value="Nieuwe Snaapse Lik aanvraag via snaapselik.nl">
+
+        <p class="honeypot">
+          <label>Niet invullen <input name="bot-field"></label>
         </p>
-        <div class="button-row">
-          <a class="button black" href="#music">HEAR THE SINGLES ↘</a>
-          <a class="underlink" href="#contact">BOOK SNAAPSE LIK ↗</a>
-        </div>
-      </div>
 
-      <div class="bankoe-side reveal">
-        <img src="assets/bankoe-right.webp" alt="Snaapse Lik foto">
-      </div>
-    </section>
+        <label>
+          <span>NAAM / ORGANISATIE</span>
+          <input type="text" name="name" autocomplete="name" required>
+        </label>
 
-    <section id="music" class="section music">
-      <div class="section-title reveal">
-        <span class="section-no">01</span>
-        <h2>MUSIC</h2>
-        <span class="section-side">RELEASES</span>
-      </div>
+        <label>
+          <span>EMAIL</span>
+          <input type="email" name="email" autocomplete="email" required>
+        </label>
 
-      <div id="release-grid" class="release-grid"></div>
-
-      <div class="platform-bar reveal">
-        <span>STREAM SNAAPSE LIK</span>
-        <div>
-          <a data-link="spotify" target="_blank" rel="noopener">SPOTIFY ↗</a>
-          <a data-link="apple" target="_blank" rel="noopener">APPLE MUSIC ↗</a>
-          <a data-link="youtube" target="_blank" rel="noopener">YOUTUBE ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <section class="quote-band">
-      <p class="quote-kicker">3VOOR12 LOKAAL</p>
-      <blockquote>
-        “EEN BEETJE <span>PLEZIER</span><br>
-        EN EEN BEETJE <em>MIDDELVINGER.</em>”
-      </blockquote>
-      <a data-link="article" target="_blank" rel="noopener">READ ARTICLE ↗</a>
-    </section>
-
-    <section id="live" class="section live">
-      <div class="section-title reveal">
-        <span class="section-no">02</span>
-        <h2>LIVE</h2>
-      </div>
-
-      <div class="live-gallery reveal">
-        <figure class="live-shot live-shot-a">
-          <img src="assets/live-1.webp" alt="Snaapse Lik live">
-        </figure>
-        <figure class="live-shot live-shot-b">
-          <img src="assets/live-2.webp" alt="Snaapse Lik live optreden">
-        </figure>
-        <div class="live-copy">
-          <p class="big">Op het podium wordt Snaapse Lik groter, harder en losser.</p>
-          <a class="button yellow" data-link="fullShow" target="_blank" rel="noopener">
-            WATCH FULL SHOW ↗
-          </a>
-        </div>
-      </div>
-
-      <div class="show-head">
-        <span>DATE</span><span>VENUE</span><span>CITY</span><span>STATUS</span>
-      </div>
-      <div id="show-list" class="show-list"></div>
-    </section>
-
-    <section class="section about-teaser">
-      <div class="section-title reveal">
-        <span class="section-no">03</span>
-        <h2>ABOUT</h2>
-      </div>
-
-      <div class="about-teaser-grid reveal">
-        <div class="about-teaser-image">
-          <img src="assets/about-teaser.webp" alt="Snaapse Lik groepsfoto">
-        </div>
-        <div class="about-teaser-copy">
-          <p>
-            Meer over Snaapse Lik, hoe de groep ontstond en wie Mogli, Adelin,
-            Forward en WZRD zijn.
-          </p>
-          <a class="button black" href="about.html">GO TO ABOUT ↗</a>
-        </div>
-      </div>
-    </section>
-
-    <section id="epk" class="section epk">
-      <div class="section-title compact reveal">
-        <span class="section-no">04</span>
-        <h2>EPK</h2>
-      </div>
-
-      <div class="epk-wrap reveal">
-        <a class="epk-card" href="downloads/Snaapse-Lik-EPK.pdf" target="_blank">
-          <span>PRESS KIT</span>
-          <strong>DOWNLOAD<br>EPK</strong>
-          <small>Bio / foto's / releases / live</small>
-          <b>↓</b>
-        </a>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="contact-top">
-        <p>CONTACT / SOCIALS</p>
-        <h2>SNAAPSE<br><span>LIK</span></h2>
-      </div>
-
-      <div class="contact-lower">
-        <div class="contact-info reveal">
-          <a data-link="mail" class="contact-email">SNAAPSELIK@GMAIL.COM ↗</a>
-          <a data-link="phone">+31 6 34038162</a>
-
-          <div class="social-grid">
-            <a data-link="instagram" target="_blank" rel="noopener">INSTAGRAM ↗</a>
-            <a data-link="tiktok" target="_blank" rel="noopener">TIKTOK ↗</a>
-            <a data-link="spotify" target="_blank" rel="noopener">SPOTIFY ↗</a>
-            <a data-link="apple" target="_blank" rel="noopener">APPLE MUSIC ↗</a>
-            <a data-link="youtube" target="_blank" rel="noopener">YOUTUBE ↗</a>
-          </div>
-        </div>
-
-        <form class="booking-form reveal"
-              name="booking"
-              method="POST"
-              action="/thanks.html"
-              data-netlify="true"
-              netlify-honeypot="bot-field">
-          <input type="hidden" name="form-name" value="booking">
-          <p class="hidden"><label>Niet invullen <input name="bot-field"></label></p>
-
+        <div class="form-row">
           <label>
-            <span>NAAM / ORGANISATIE</span>
-            <input type="text" name="name" required>
+            <span>TYPE</span>
+            <select name="type">
+              <option>Booking</option>
+              <option>Festival</option>
+              <option>Clubshow</option>
+              <option>Press</option>
+              <option>Collab</option>
+              <option>Anders</option>
+            </select>
           </label>
-
           <label>
-            <span>EMAIL</span>
-            <input type="email" name="email" required>
+            <span>DATUM</span>
+            <input type="date" name="date">
           </label>
+        </div>
 
-          <div class="form-row">
-            <label>
-              <span>TYPE</span>
-              <select name="type">
-                <option>Booking</option>
-                <option>Festival</option>
-                <option>Clubshow</option>
-                <option>Press</option>
-                <option>Collab</option>
-                <option>Anders</option>
-              </select>
-            </label>
+        <label>
+          <span>BERICHT</span>
+          <textarea name="message" rows="6" required></textarea>
+        </label>
 
-            <label>
-              <span>DATUM</span>
-              <input type="date" name="date">
-            </label>
-          </div>
+        <button type="submit">VERSTUUR ↗</button>
+        <p id="form-status" class="form-status" aria-live="polite"></p>
+      </form>
+    </div>
+  </section>
+</main>
 
-          <label>
-            <span>BERICHT</span>
-            <textarea name="message" rows="6" required></textarea>
-          </label>
+<footer>
+  <img src="assets/logo.png" alt="Snaapse Lik">
+  <span>© <span id="year"></span> SNAAPSE LIK</span>
+  <a href="#top">BACK TO TOP ↑</a>
+</footer>
 
-          <button type="submit">SEND IT ↗</button>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-logo"><img src="assets/logo.png" alt="Snaapse Lik"></div>
-    <span>© <span id="year"></span> SNAAPSE LIK</span>
-    <a href="#top">BACK TO TOP ↑</a>
-  </footer>
-
-  <script src="site-data.js"></script>
-  <script src="script.js"></script>
+<script src="script.js"></script>
 </body>
 </html>

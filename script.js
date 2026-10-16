@@ -1,75 +1,66 @@
 
-const data = window.SNAAPSE || { releases: [], shows: [], links: {} };
-
-document.querySelectorAll("[data-link]").forEach(el => {
-  const href = data.links[el.dataset.link];
-  if (href) el.href = href;
+document.querySelectorAll('.reveal').forEach(el => {
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        io.unobserve(entry.target);
+      }
+    });
+  }, {threshold: .08});
+  io.observe(el);
 });
 
-const releaseGrid = document.getElementById("release-grid");
-if (releaseGrid) {
-  releaseGrid.innerHTML = data.releases.map((r, i) => `
-    <article class="release-card reveal">
-      <div class="cover-wrap">
-        <img src="${r.cover}" alt="${r.title} cover artwork" loading="${i === 0 ? "eager" : "lazy"}">
-      </div>
-      <div class="release-info">
-        <div>
-          <h3>${r.title}</h3>
-          <p>SINGLE / ${r.date}</p>
-        </div>
-        <div class="release-links">
-          <a href="${r.spotify}" target="_blank" rel="noopener" aria-label="${r.title} op Spotify">SP</a>
-          <a href="${r.apple}" target="_blank" rel="noopener" aria-label="${r.title} op Apple Music">AM</a>
-        </div>
-      </div>
-    </article>
-  `).join("");
-}
+const nav = document.getElementById('main-nav');
+const menu = document.querySelector('.menu-toggle');
+menu?.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menu.setAttribute('aria-expanded', String(open));
+  document.body.style.overflow = open ? 'hidden' : '';
+});
+nav?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  nav.classList.remove('open');
+  document.body.style.overflow = '';
+}));
 
-const showList = document.getElementById("show-list");
-if (showList) {
-  showList.innerHTML = data.shows.map(s => `
-    <div class="show-row reveal">
-      <time>${s.date}</time>
-      <strong>${s.venue}</strong>
-      <span class="city">${s.city}</span>
-      <span class="status">${s.status}</span>
-    </div>
-  `).join("");
-}
+document.querySelectorAll('#year').forEach(el => el.textContent = new Date().getFullYear());
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("visible");
-      observer.unobserve(entry.target);
+const form = document.getElementById('booking-form');
+const statusEl = document.getElementById('form-status');
+
+if (form && statusEl) {
+  form.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (location.protocol === 'file:') {
+      statusEl.className = 'form-status error';
+      statusEl.textContent = 'Dit formulier werkt pas op de live Netlify-site, niet vanuit een lokaal index.html-bestand.';
+      return;
+    }
+
+    const button = form.querySelector('button[type="submit"]');
+    button.disabled = true;
+    statusEl.className = 'form-status';
+    statusEl.textContent = 'Versturen…';
+
+    try {
+      const body = new URLSearchParams(new FormData(form)).toString();
+      const response = await fetch('/', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+        body
+      });
+
+      if (!response.ok) throw new Error('Form submission failed');
+
+      form.reset();
+      statusEl.className = 'form-status ok';
+      statusEl.textContent = 'Verstuurd — thanks! We nemen zo snel mogelijk contact op.';
+    } catch (error) {
+      statusEl.className = 'form-status error';
+      statusEl.innerHTML = 'Versturen lukte niet. Mail ons direct via <a href="mailto:snaapselik@gmail.com">snaapselik@gmail.com</a>.';
+    } finally {
+      button.disabled = false;
     }
   });
-}, { threshold: .1, rootMargin: "0px 0px -30px" });
-
-document.querySelectorAll(".reveal").forEach(el => observer.observe(el));
-
-const menuButton = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".main-nav, .dark-nav");
-
-menuButton?.addEventListener("click", () => {
-  const navEl = document.getElementById("main-nav");
-  const open = navEl.classList.toggle("open");
-  menuButton.classList.toggle("open", open);
-  menuButton.setAttribute("aria-expanded", String(open));
-  document.body.style.overflow = open ? "hidden" : "";
-});
-
-document.querySelectorAll("#main-nav a").forEach(a => {
-  a.addEventListener("click", () => {
-    const navEl = document.getElementById("main-nav");
-    navEl.classList.remove("open");
-    menuButton?.classList.remove("open");
-    menuButton?.setAttribute("aria-expanded", "false");
-    document.body.style.overflow = "";
-  });
-});
-
-const yearNode = document.getElementById("year");
-if (yearNode) yearNode.textContent = new Date().getFullYear();
+}

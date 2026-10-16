@@ -1,0 +1,37 @@
+SNAAPSE LIK — UPDATE 2
+
+Deze versie fixt:
+- Nieuw Snaapse Lik-logo overal
+- "Niet Bankoe" blijft volledig binnen het gele vak
+- EPK-download wijst direct naar /EPK.pdf
+- Contactformulier gebruikt Netlify Forms en geeft op de site een duidelijke succesmelding
+
+BELANGRIJK VOOR HET CONTACTFORMULIER
+Na upload/deploy in Netlify:
+
+1. Ga naar Netlify > jouw site > Forms.
+2. Als je "Enable form detection" ziet: klik dat aan en deploy de site nog één keer.
+3. Ga daarna naar Forms > Submission notifications.
+4. Klik Add notification > Email notification.
+5. Vul in: snaapselik@gmail.com
+6. Kies het formulier "booking" (of all forms) en sla op.
+
+Vanaf dat moment:
+- bezoekers vullen het formulier in;
+- Netlify slaat de inzending op;
+- snaapselik@gmail.com krijgt de inzending per mail;
+- omdat het formulierveld name="email" heet, kun je vanuit de notificatiemail direct op de afzender antwoorden.
+
+LET OP
+Het formulier werkt NIET wanneer je index.html lokaal opent via file://.
+Test het formulier op de echte Netlify-link of op snaapselik.nl.
+
+GITHUB
+Upload de INHOUD van deze zip rechtstreeks naar de root van je repository:
+index.html
+about.html
+style.css
+script.js
+EPK.pdf
+assets/
+enzovoort.
