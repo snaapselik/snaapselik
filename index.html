@@ -166,15 +166,10 @@
 
       <form id="booking-form"
             class="booking-form reveal"
-            name="booking"
-            method="POST"
-            data-netlify="true"
-            data-netlify-honeypot="bot-field">
-        <input type="hidden" name="form-name" value="booking">
-        <input type="hidden" name="subject" data-remove-prefix value="Nieuwe Snaapse Lik aanvraag via snaapselik.nl">
+            autocomplete="on">
 
         <p class="honeypot">
-          <label>Niet invullen <input name="bot-field"></label>
+          <label>Niet invullen <input name="website" tabindex="-1" autocomplete="off"></label>
         </p>
 
         <label>
@@ -223,6 +218,7 @@
   <a href="#top">BACK TO TOP ↑</a>
 </footer>
 
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script src="script.js"></script>
 </body>
 </html>

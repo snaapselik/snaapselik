@@ -1,37 +1,52 @@
-SNAAPSE LIK — UPDATE 2
+SNAAPSE LIK — UPDATE 3 / EMAILJS
 
-Deze versie fixt:
-- Nieuw Snaapse Lik-logo overal
-- "Niet Bankoe" blijft volledig binnen het gele vak
-- EPK-download wijst direct naar /EPK.pdf
-- Contactformulier gebruikt Netlify Forms en geeft op de site een duidelijke succesmelding
+Deze versie gebruikt GEEN Netlify Forms meer voor de booking.
 
-BELANGRIJK VOOR HET CONTACTFORMULIER
-Na upload/deploy in Netlify:
+Ingesteld:
+- Service ID: service_jsa9lmi
+- Booking template: template_2d1xr1j
+- Auto-reply template: template_gma81ux
+- Public Key: WGyBfyHcUlBZah5nO
 
-1. Ga naar Netlify > jouw site > Forms.
-2. Als je "Enable form detection" ziet: klik dat aan en deploy de site nog één keer.
-3. Ga daarna naar Forms > Submission notifications.
-4. Klik Add notification > Email notification.
-5. Vul in: snaapselik@gmail.com
-6. Kies het formulier "booking" (of all forms) en sla op.
+Wat gebeurt er bij VERSTUUR:
+1. De booking-template wordt via EmailJS verstuurd.
+2. De auto-reply-template wordt daarna naar de invuller verstuurd.
+3. Op de website verschijnt een succesmelding.
 
-Vanaf dat moment:
-- bezoekers vullen het formulier in;
-- Netlify slaat de inzending op;
-- snaapselik@gmail.com krijgt de inzending per mail;
-- omdat het formulierveld name="email" heet, kun je vanuit de notificatiemail direct op de afzender antwoorden.
+BELANGRIJK IN EMAILJS
 
-LET OP
-Het formulier werkt NIET wanneer je index.html lokaal opent via file://.
-Test het formulier op de echte Netlify-link of op snaapselik.nl.
+BOOKING TEMPLATE
+- To Email: snaapselik@gmail.com
+- Reply To: {{email}}
+- Template gebruikt:
+  {{name}}
+  {{email}}
+  {{type}}
+  {{date}}
+  {{message}}
 
-GITHUB
-Upload de INHOUD van deze zip rechtstreeks naar de root van je repository:
-index.html
-about.html
-style.css
-script.js
-EPK.pdf
-assets/
-enzovoort.
+AUTO-REPLY TEMPLATE
+- To Email: {{email}}
+- Reply To: snaapselik@gmail.com
+- Template gebruikt dezelfde variabelen:
+  {{name}}
+  {{email}}
+  {{type}}
+  {{date}}
+  {{message}}
+
+UPLOAD NAAR GITHUB
+Upload de INHOUD van deze zip naar de root van je repository.
+De belangrijkste gewijzigde bestanden zijn:
+- index.html
+- script.js
+
+Je kunt alle bestanden uit deze update gewoon over de bestaande bestanden uploaden.
+
+TEST
+Test na de nieuwe Netlify deploy via snaapselik.nl.
+Gebruik een echt emailadres, zodat je kunt controleren:
+- Snaapse Lik ontvangt de bookingmail
+- De invuller ontvangt de auto-reply
+
+Als EmailJS een origin/domain-beperking gebruikt, voeg dan snaapselik.nl toe aan de toegestane origins/domains in EmailJS.
