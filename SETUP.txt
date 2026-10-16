@@ -50,3 +50,8 @@ Gebruik een echt emailadres, zodat je kunt controleren:
 - De invuller ontvangt de auto-reply
 
 Als EmailJS een origin/domain-beperking gebruikt, voeg dan snaapselik.nl toe aan de toegestane origins/domains in EmailJS.
+
+
+UPDATE 4
+- About-pagina gebruikt nu de door jou aangeleverde teamfoto's:
+  Adelin, Mogli, Forward, WZRD.
