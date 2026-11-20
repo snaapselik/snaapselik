@@ -32,13 +32,23 @@ button,input,select,textarea{font:inherit}
 .hero-sticker b{font-size:26px;text-align:right;font-weight:400}
 .hero-sticker:hover{transform:rotate(0deg) translateY(-4px)}
 
-.bankoe{background:var(--yellow);padding:110px var(--pad);display:grid;grid-template-columns:1fr .82fr .42fr;gap:34px;align-items:center}
-.bankoe-image{height:620px}.bankoe-side{height:330px;align-self:end}
-.bankoe-image img,.bankoe-side img{width:100%;height:100%;object-fit:cover}
-.eyebrow{font-size:10px;letter-spacing:.14em;font-weight:600}
-.bankoe-copy h1{font-family:var(--display);font-size:clamp(66px,8.5vw,145px);line-height:.72;letter-spacing:-.075em;margin:20px 0 32px}
+.bankoe{position:relative;isolation:isolate;overflow:hidden;background:var(--ink);color:#fff;padding:110px var(--pad) 90px;display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr) minmax(0,.55fr);gap:clamp(22px,3vw,48px);align-items:center}
+.bankoe::after{content:"";position:absolute;inset:0;z-index:-1;background:rgba(0,0,0,.72)}
+.bankoe-background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;pointer-events:none}
+.bankoe-image{align-self:center;transform:rotate(-3deg)}
+.bankoe-image.visible{transform:rotate(-3deg)}
+.bankoe-image img{width:100%;height:auto;aspect-ratio:1;box-shadow:10px 12px 0 rgba(0,0,0,.4)}
+.bankoe-image a{display:block}
+.bankoe-side{position:relative;align-self:end;margin-bottom:12px}
+.bankoe-side video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:cover;border:1px solid rgba(255,255,255,.35)}
+.eyebrow{font-size:14px;letter-spacing:.14em;font-weight:600}
+.bankoe-copy h1{font-family:var(--display);font-size:clamp(48px,6vw,108px);line-height:.82;letter-spacing:-.075em;margin:20px 0 28px}
 .bankoe-copy h1 em{font-style:normal;color:var(--red)}
-.bankoe-copy p{font-size:clamp(14px,1.2vw,18px);line-height:1.7;max-width:650px}
+.bankoe-copy p{font-size:16px;line-height:1.7;max-width:650px}
+.bankoe-copy .bankoe-date{display:inline-block;background:var(--yellow);color:var(--ink);font-size:clamp(16px,1.5vw,22px);font-weight:600;padding:8px 12px;margin-bottom:20px;transform:rotate(-2deg)}
+.bankoe .button.yellow{color:var(--ink);font-size:14px;font-weight:600}
+.bankoe .text-link{font-size:14px}
+.bankoe a:focus-visible{outline:3px solid var(--yellow);outline-offset:5px}
 .actions{display:flex;gap:22px;align-items:center;flex-wrap:wrap;margin-top:34px}
 .button{display:inline-flex;min-height:52px;padding:0 18px;align-items:center;justify-content:center;border:1px solid var(--ink);font-size:11px;font-weight:600}
 .button.dark{background:var(--ink);color:#fff}
@@ -120,7 +130,7 @@ footer img{width:115px}footer a{border-bottom:1px solid;padding-bottom:3px}
 .reveal.visible{opacity:1;transform:none}
 
 @media(max-width:1050px){
-  .bankoe{grid-template-columns:1fr 1fr}.bankoe-copy{grid-column:1/-1}.bankoe-image{height:auto}.bankoe-side{height:260px}
+  .bankoe{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}.bankoe-copy{grid-column:2;grid-row:1}.bankoe-side{grid-column:2;width:65%;justify-self:end}.bankoe-copy h1{font-size:clamp(48px,8vw,80px)}
   .release-grid{grid-template-columns:repeat(3,minmax(0,1fr))}
   .live-grid{grid-template-columns:1fr 1fr}.live-copy{grid-column:1/-1;padding-left:0}
   .about-grid,.about-hero{grid-template-columns:1fr}
@@ -132,7 +142,7 @@ footer img{width:115px}footer a{border-bottom:1px solid;padding-bottom:3px}
   .main-nav.open{display:flex}
   .hero-copy{padding-top:105px}.hero-logo{width:min(500px,84vw)}
   .hero-sticker{width:220px;min-height:170px}.hero-sticker strong span{font-size:38px}
-  .bankoe{grid-template-columns:1fr;padding-top:75px;padding-bottom:85px}.bankoe-side{height:auto}
+  .bankoe{grid-template-columns:minmax(0,1fr);padding-top:70px;padding-bottom:95px;gap:38px}.bankoe-copy{grid-column:1;grid-row:auto}.bankoe-image{max-width:440px;width:100%;justify-self:center}.bankoe-side{grid-column:1;width:min(75%,300px);justify-self:end}.bankoe-copy h1{font-size:clamp(62px,14vw,100px)}
   .section-title{grid-template-columns:42px 1fr}.release-grid{grid-template-columns:1fr;max-width:390px;margin:0 auto}
   .platforms{justify-content:flex-start;flex-wrap:wrap}
   .live-grid{grid-template-columns:1fr}.live-grid>img,.live-grid>img:nth-child(2){height:auto;margin:0}
@@ -141,3 +151,5 @@ footer img{width:115px}footer a{border-bottom:1px solid;padding-bottom:3px}
   .member-grid{grid-template-columns:1fr}
   footer{flex-wrap:wrap}
 }
+
+@media(prefers-reduced-motion:reduce){.bankoe .reveal{transition:none}.bankoe-background{visibility:hidden}}

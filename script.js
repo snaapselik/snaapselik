@@ -106,3 +106,32 @@ if (form && statusEl) {
     }
   });
 }
+
+// Load decorative loops near the section, and stop them off-screen.
+const bankoe = document.getElementById('bankoe');
+if (bankoe) {
+  const videos = [...bankoe.querySelectorAll('video')];
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  let paused = reducedMotion.matches;
+  let visible = false;
+  const syncVideos = () => {
+    const play = visible && !paused && !document.hidden;
+    videos.forEach(video => {
+      if (play) {
+        const source = video.querySelector('source');
+        if (!source.hasAttribute('src')) {
+          source.src = source.dataset.src;
+          video.load();
+        }
+        video.muted = true;
+        video.play().catch(() => {});
+      } else video.pause();
+    });
+  };
+  reducedMotion.addEventListener('change', event => { paused = event.matches; syncVideos(); });
+  document.addEventListener('visibilitychange', syncVideos);
+  new IntersectionObserver(entries => {
+    visible = entries[0].isIntersecting;
+    syncVideos();
+  }, { threshold: 0 }).observe(bankoe);
+}
