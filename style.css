@@ -153,3 +153,6 @@ footer img{width:115px}footer a{border-bottom:1px solid;padding-bottom:3px}
 }
 
 @media(prefers-reduced-motion:reduce){.bankoe .reveal{transition:none}.bankoe-background{visibility:hidden}}
+
+.bankoe-sound{position:absolute;right:10px;bottom:10px;min-height:44px;padding:10px 14px;background:var(--ink);color:white;border:1px solid white;font:600 14px var(--mono);cursor:pointer}
+.bankoe-sound:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
