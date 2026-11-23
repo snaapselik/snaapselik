@@ -156,3 +156,38 @@ footer img{width:115px}footer a{border-bottom:1px solid;padding-bottom:3px}
 
 .bankoe-sound{position:absolute;right:10px;bottom:10px;min-height:44px;padding:10px 14px;background:var(--ink);color:white;border:1px solid white;font:600 14px var(--mono);cursor:pointer}
 .bankoe-sound:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+
+/* Platform logos and a clearer contact form, on every screen. */
+.platforms{--icon-cutout:var(--paper);align-items:center;gap:18px}
+.platform-icon{display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;border:0;padding:8px;transition:transform .15s ease}
+.platform-icon svg{width:30px;height:30px;fill:currentColor}
+.platform-icon:hover{transform:translateY(-3px)}
+.platform-icon:focus-visible{outline:2px solid currentColor;outline-offset:4px}
+.footer-socials{--icon-cutout:var(--ink);display:flex;gap:12px;align-items:center}
+footer{flex-wrap:wrap}
+footer .footer-socials{order:4;flex-basis:100%;justify-content:center;padding-top:22px;border-top:1px solid #444}
+footer .platform-icon{border:0;padding:8px}
+.contact-info .email{font-size:clamp(18px,2vw,28px);display:flex;align-items:center;gap:12px;max-width:100%}
+.contact-info .email span{min-width:0;overflow-wrap:anywhere}
+.email-arrow{width:24px;height:24px;flex-shrink:0}
+.booking-form h3{font-family:var(--display);font-size:clamp(28px,3vw,44px);line-height:1.08;letter-spacing:-.04em;margin-bottom:32px}
+.booking-form label>span{font-size:14px;letter-spacing:.04em;font-weight:600}
+.booking-form input,.booking-form textarea,.booking-form select{display:block;min-height:52px;background:#fff;color:var(--ink);border:2px solid var(--ink);padding:14px 16px;font-size:16px;box-shadow:4px 4px 0 rgba(0,0,0,.18);color-scheme:light}
+.booking-form textarea{resize:vertical;min-height:170px}
+.booking-form input::placeholder,.booking-form textarea::placeholder{color:#696969;opacity:1}
+.booking-form input:focus-visible,.booking-form textarea:focus-visible,.booking-form select:focus-visible{outline:3px solid var(--yellow);outline-offset:3px}
+.booking-form button{border:2px solid var(--ink);background:var(--yellow);color:var(--ink);font-size:16px}
+@media(max-width:760px){
+  .bankoe{padding-top:0}
+  .bankoe-side{grid-row:1;grid-column:1;width:calc(100% + var(--pad) * 2);justify-self:center;margin:0;background:var(--ink)}
+  .bankoe-side video{height:min(80svh,680px);width:100%;aspect-ratio:auto;object-fit:contain;border:0}
+  .bankoe-side.reveal{opacity:1;transform:none}
+  .bankoe-image{grid-row:2}
+  .bankoe-copy{grid-row:3}
+  .live-grid>img:first-child{display:none}
+  .contact-info .email{font-size:clamp(18px,5.5vw,25px);gap:8px}
+  .contact-grid{gap:48px;padding-top:45px}
+  footer .footer-socials{gap:14px}
+}
+
+#booking-form{scroll-margin-top:85px}

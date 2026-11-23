@@ -102,11 +102,7 @@
       </a>
     </div>
 
-    <div class="platforms reveal">
-      <a href="https://open.spotify.com/artist/59t2biWvFDiQhuZ9R1diuo" target="_blank" rel="noopener">SPOTIFY ↗</a>
-      <a href="https://music.apple.com/nl/artist/snaapse-lik/1855761999" target="_blank" rel="noopener">APPLE MUSIC ↗</a>
-      <a href="https://www.youtube.com/channel/UCHqWy0wI8PoblfnDtV_jnxA" target="_blank" rel="noopener">YOUTUBE ↗</a>
-    </div>
+    <nav class="platforms reveal" aria-label="Luister naar Snaapse Lik"><a class="platform-icon" href="https://open.spotify.com/artist/59t2biWvFDiQhuZ9R1diuo" target="_blank" rel="noopener" aria-label="Snaapse Lik op Spotify" title="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="11"/><g fill="none" stroke="var(--icon-cutout)" stroke-width="1.7" stroke-linecap="round"><path d="M5.5 9c4.6-1.5 9.2-1 13 1.1M6.3 12.4c3.9-1.1 7.6-.8 11 1M7.1 15.6c3.1-.8 6-.5 8.9.9"/></g></svg></a><a class="platform-icon" href="https://music.apple.com/nl/artist/snaapse-lik/1855761999" target="_blank" rel="noopener" aria-label="Snaapse Lik op Apple Music" title="Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 2v14.6c0 2.1-1.8 3.4-3.6 3.4-1.6 0-2.7-.9-2.7-2.2 0-1.6 1.5-2.7 4.3-3V6.2L8 8v10.6C8 20.7 6.2 22 4.4 22c-1.6 0-2.7-.9-2.7-2.2 0-1.6 1.5-2.7 4.3-3V4.6z"/></svg></a><a class="platform-icon" href="https://www.youtube.com/channel/UCHqWy0wI8PoblfnDtV_jnxA" target="_blank" rel="noopener" aria-label="Snaapse Lik op YouTube" title="YouTube"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22.5 7a3 3 0 0 0-2.1-2.1C18.5 4.4 12 4.4 12 4.4s-6.5 0-8.4.5A3 3 0 0 0 1.5 7C1 8.9 1 12 1 12s0 3.1.5 5a3 3 0 0 0 2.1 2.1c1.9.5 8.4.5 8.4.5s6.5 0 8.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5 .5-5s0-3.1-.5-5Z"/><path d="m10 8 6 4-6 4Z" fill="var(--icon-cutout)"/></svg></a></nav>
   </section>
 
   <section class="quote-band">
@@ -162,20 +158,14 @@
 
     <div class="contact-grid">
       <div class="contact-info reveal">
-        <a class="email" href="mailto:snaapselik@gmail.com">SNAAPSELIK@GMAIL.COM ↗</a>
+        <a class="email" href="mailto:snaapselik@gmail.com"><span>SNAAPSELIK@GMAIL.COM</span><svg class="email-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 19 19 5M5 5h14v14" fill="none" stroke="currentColor" stroke-width="2"/></svg></a>
         <a href="tel:+31634038162">+31 6 34038162</a>
-
-        <div class="socials">
-          <a href="https://www.instagram.com/snaapselik/" target="_blank" rel="noopener">INSTAGRAM ↗</a>
-          <a href="https://www.tiktok.com/@snaapse.lik" target="_blank" rel="noopener">TIKTOK ↗</a>
-          <a href="https://open.spotify.com/artist/59t2biWvFDiQhuZ9R1diuo" target="_blank" rel="noopener">SPOTIFY ↗</a>
-          <a href="https://music.apple.com/nl/artist/snaapse-lik/1855761999" target="_blank" rel="noopener">APPLE MUSIC ↗</a>
-        </div>
       </div>
 
       <form id="booking-form"
             class="booking-form reveal"
-            autocomplete="on">
+            autocomplete="on" aria-labelledby="booking-title">
+        <h3 id="booking-title">Neem contact met ons op</h3>
 
         <p class="honeypot">
           <label>Niet invullen <input name="website" tabindex="-1" autocomplete="off"></label>
@@ -183,12 +173,12 @@
 
         <label>
           <span>NAAM / ORGANISATIE</span>
-          <input type="text" name="name" autocomplete="name" required>
+          <input type="text" name="name" placeholder="Je naam of organisatie" autocomplete="name" required>
         </label>
 
         <label>
           <span>EMAIL</span>
-          <input type="email" name="email" autocomplete="email" required>
+          <input type="email" name="email" placeholder="jij@voorbeeld.nl" autocomplete="email" required>
         </label>
 
         <div class="form-row">
@@ -211,7 +201,7 @@
 
         <label>
           <span>BERICHT</span>
-          <textarea name="message" rows="6" required></textarea>
+          <textarea name="message" rows="6" placeholder="Vertel ons wat je in gedachten hebt…" required></textarea>
         </label>
 
         <button type="submit">VERSTUUR ↗</button>
@@ -222,6 +212,7 @@
 </main>
 
 <footer>
+  <nav class="footer-socials" aria-label="Social media"><a class="platform-icon" href="https://www.instagram.com/snaapselik/" target="_blank" rel="noopener" aria-label="Snaapse Lik op Instagram" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2"/></svg></a><a class="platform-icon" href="https://www.tiktok.com/@snaapse.lik" target="_blank" rel="noopener" aria-label="Snaapse Lik op TikTok" title="TikTok"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M16.7 2c.3 2.7 1.8 4.3 4.3 4.5v3.3a9 9 0 0 1-4.3-1.3v7.3a6.2 6.2 0 1 1-5.4-6.1v3.4a2.9 2.9 0 1 0 2.1 2.8V2z"/></svg></a><a class="platform-icon" href="https://open.spotify.com/artist/59t2biWvFDiQhuZ9R1diuo" target="_blank" rel="noopener" aria-label="Snaapse Lik op Spotify" title="Spotify"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="11"/><g fill="none" stroke="var(--icon-cutout)" stroke-width="1.7" stroke-linecap="round"><path d="M5.5 9c4.6-1.5 9.2-1 13 1.1M6.3 12.4c3.9-1.1 7.6-.8 11 1M7.1 15.6c3.1-.8 6-.5 8.9.9"/></g></svg></a><a class="platform-icon" href="https://music.apple.com/nl/artist/snaapse-lik/1855761999" target="_blank" rel="noopener" aria-label="Snaapse Lik op Apple Music" title="Apple Music"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M19 2v14.6c0 2.1-1.8 3.4-3.6 3.4-1.6 0-2.7-.9-2.7-2.2 0-1.6 1.5-2.7 4.3-3V6.2L8 8v10.6C8 20.7 6.2 22 4.4 22c-1.6 0-2.7-.9-2.7-2.2 0-1.6 1.5-2.7 4.3-3V4.6z"/></svg></a></nav>
   <img src="assets/logo.png" alt="Snaapse Lik">
   <span>© <span id="year"></span> SNAAPSE LIK</span>
   <a href="#top">BACK TO TOP ↑</a>
