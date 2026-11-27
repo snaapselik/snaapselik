@@ -191,3 +191,11 @@ footer .platform-icon{border:0;padding:8px}
 }
 
 #booking-form{scroll-margin-top:85px}
+
+.ep-release{display:grid;grid-template-columns:minmax(0,340px) minmax(0,1fr);gap:clamp(24px,5vw,70px);align-items:center;margin-bottom:64px}
+.ep-release img{width:100%;height:auto;aspect-ratio:1;border:1px solid var(--ink)}
+.ep-release h3{font-family:var(--display);font-size:clamp(32px,5vw,72px);line-height:1;letter-spacing:-.05em;margin:16px 0 28px}
+.ep-release .button{font-size:14px}
+.releases-heading{font-family:var(--display);font-size:24px;margin-bottom:24px}
+.ep-release a:focus-visible{outline:3px solid var(--red);outline-offset:5px}
+@media(max-width:760px){.ep-release{grid-template-columns:1fr;max-width:390px;margin:0 auto 56px}.releases-heading{max-width:390px;margin:0 auto 24px}}
